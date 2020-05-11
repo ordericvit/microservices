@@ -1,0 +1,20 @@
+---
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  name: ui-Deployment
+spec:
+  replicas: 1
+  selecctor:
+    matchLabels:
+      app: ui
+  template:
+    metadata:
+      name: ui
+      labels:
+        app: ui
+        project: reddit
+    spec:
+      containers:
+      - image: chromko/ui
+        name: ui

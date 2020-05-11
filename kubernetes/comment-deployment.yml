@@ -1,0 +1,20 @@
+---
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  name: comment-Deployment
+spec:
+  replicas: 1
+  selecctor:
+    matchLabels:
+      app: comment
+  template:
+    metadata:
+      name: comment
+      labels:
+        app: comment
+        project: reddit
+    spec:
+      containers:
+      - image: chromko/comment
+        name: comment

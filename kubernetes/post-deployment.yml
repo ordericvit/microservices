@@ -1,0 +1,20 @@
+---
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  name: post-Deployment
+spec:
+  replicas: 1
+  selecctor:
+    matchLabels:
+      app: post
+  template:
+    metadata:
+      name: post
+      labels:
+        app: post
+        project: reddit
+    spec:
+      containers:
+      - image: chromko/post
+        name: post
