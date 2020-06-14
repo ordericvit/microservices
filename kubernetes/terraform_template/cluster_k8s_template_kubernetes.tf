@@ -1,6 +1,6 @@
 provider "google" {
-  credentials = file("/home/user1/account.json")
-  project     = "optimal-mender-261119"
+  credentials = "${file("account.json")}"
+  project     = "$my-project-id"
   region      = "us-central1"
 }
 
